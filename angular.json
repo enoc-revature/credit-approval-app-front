@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "credit-approval-app"
+    }
+  },
+  "defaultProject": "credit-approval-app",
+  "cli": {
+    "analytics": "e6bdfe98-6f34-48c8-8e62-55cedc729c21"
+  }
 }
