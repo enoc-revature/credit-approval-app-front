@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormGroup } from '@angular/forms';
 
 @Injectable({
   providedIn: 'root'
@@ -18,8 +19,8 @@ export class DataSubmissionService {
 
   url = "http://localhost:8080/send-data";
 
-  postData(obj: Object): Observable<boolean> {
+  postData(data: FormGroup): Observable<boolean> {
     console.log("postData()");
-    return this.http.post<boolean>(this.url, obj)
+    return this.http.post<boolean>(this.url, data)
   }
 }
