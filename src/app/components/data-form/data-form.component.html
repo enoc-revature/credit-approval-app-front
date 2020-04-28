@@ -1,9 +1,11 @@
-<form [formGroup]="dataForm" (ngSubmit)="onSubmit()">
-    <label>Income:</label>
-    <input type="text" formControlName="income">
-    <br>
-    <label>Months at current Job:</label>
-    <input type="text" formControlName="timeAtJob">
-    <br>
-    <button type="submit">Submit</button>
-</form>
+<div class="container">
+    <form class="form-group" [formGroup]="dataForm" (ngSubmit)="onSubmit()">
+        <label>Income:</label>
+        <input class="form-control" type="text" formControlName="income">
+        <br>
+        <label>Months at current Job:</label>
+        <input class="form-control" type="text" formControlName="timeAtJob">
+        <br>
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
+</div>

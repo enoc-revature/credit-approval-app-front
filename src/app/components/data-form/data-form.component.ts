@@ -26,11 +26,12 @@ export class DataFormComponent implements OnInit {
 
   //TODO: add validation code to form
   //TODO: add angular bootstrap
-  //TODO: post formGroup
+
   onSubmit(): void {
     if (this.dataForm.valid) {
       console.log("Form Submitted!");
-      this.dss.postData(this.dataForm).subscribe(approved => {this.approved = approved;})
+      console.log(JSON.stringify(this.dataForm.value));
+      this.dss.postData(this.dataForm.value).subscribe(approved => {this.approved = approved;})
       //this.dataForm.reset();
   }
   }
