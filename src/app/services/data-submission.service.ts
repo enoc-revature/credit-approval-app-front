@@ -21,6 +21,7 @@ export class DataSubmissionService {
 
   postData(data: FormGroup): Observable<boolean> {
     console.log("postData()");
+    console.log(JSON.stringify(data));
     return this.http.post<boolean>(this.url, data)
   }
 }

@@ -1,11 +1,32 @@
 <div class="container">
-    <form class="form-group" [formGroup]="dataForm" (ngSubmit)="onSubmit()">
-        <label>Income:</label>
-        <input class="form-control" type="text" formControlName="income">
-        <br>
-        <label>Months at current Job:</label>
-        <input class="form-control" type="text" formControlName="timeAtJob">
-        <br>
-        <button class="btn btn-primary" type="submit">Submit</button>
+    <form class="form-group mt-5" [formGroup]="dataForm" (ngSubmit)="onSubmit()">
+        <fieldset>
+            <legend>Employment Info</legend>
+            <label>Gross Income:</label>
+            <input class="form-control" type="text" formControlName="grossIncome">
+            <br>
+            <label>Type of Income</label>
+            <select class="form-control"  formControlName="incomeType">
+                <option value="Working">Working</option>
+                <option value="Commercial associate">Commercial Associate</option>
+                <option value="Pensioner">Pensioner</option>
+                <option value="State servant">State Servant</option>
+                <option value="Student">Student</option>
+            </select>
+            <br>
+            <label>Type of Occupation</label>
+            <select class="form-control" formControlName="occupationType">
+                <option value="Higher education">Higher Education</option>
+                <option value="Secondary / secondary special">Secondary/Special</option>
+                <option value="Incomplete higher">Incomplete Higher</option>
+                <option value="Lower secondary">Lower Secondary</option>
+                <option value="Academic degree">Academic Degree</option>
+            </select>
+            <br>
+            <label>Start Date of Current Job</label>
+            <input class="form-control" type="date" formControlName="daysEmployed">
+            </fieldset>
+            <br>
+            <button class="btn btn-primary" type="submit">Submit</button>
     </form>
 </div>
