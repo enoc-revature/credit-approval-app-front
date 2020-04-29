@@ -16,6 +16,76 @@
             <br>
             <label>Type of Occupation</label>
             <select class="form-control" formControlName="occupationType">
+                <option value="Security staff">Security Staff</option>
+                <option value="Sales staff">Sales Staff</option>
+                <option value="Accountants">Accountants</option>
+                <option value="Laborers">Laborers</option>
+                <option value="Managers">Managers</option>
+                <option value="Drivers">Drivers</option>
+                <option value="Core staff">Core Staff</option>
+                <option value="High skill tech staff">High Skill Tech Staff</option>
+                <option value="Cleaning staff">Cleaning Staff</option>
+                <option value="Private service staff">Private Service Staff</option>
+                <option value="Cooking staff">Cooking Staff</option>
+                <option value="Low-skill Laborers">Low-skill Laborers</option>
+                <option value="Medicine staff">Medicine Staff</option>
+                <option value="Secretaries">Secretaries</option>
+                <option value="Waiters/barmen staff">Waiters/barmen Staff</option>
+                <option value="HR staff">HR Staff</option>
+                <option value="Realty agents">Realty Agents</option>
+                <option value="IT staff">IT Staff</option>
+            </select>
+            <br>
+            <label>Start Date of Current Job</label>
+            <input class="form-control" type="date" formControlName="daysEmployed">
+        </fieldset>
+        <br>
+        <br>
+
+        <fieldset>
+            <legend>Family Info</legend>
+            <label>Family Status:</label>
+            <select class="form-control"  formControlName="familyStatus">
+                <option value="Civil marriage">Civil Marrage</option>
+                <option value="Married">Married</option>
+                <option value="Single / not married">Single / Not Married</option>
+                <option value="Separated">Separated</option>
+                <option value="Widow">Widow</option>
+            </select>
+            <br>
+            <label>Number of Children:</label>
+            <input class="form-control" type="text" formControlName="numChildren">
+            <br>
+            <label>Number of Individuls in Household:</label>
+            <input class="form-control" type="text" formControlName="familyMembers">
+        </fieldset>
+        <br>
+        <br>
+
+        <fieldset>
+            <legend>Property Info</legend>
+            <label>Type of Housing:</label>
+            <select class="form-control" formControlName="housingType">
+                <option value="Rented apartment">Rented Apartment</option>
+                <option value="House / apartment">House / Apartment</option>
+                <option value="Municipal apartment">Municipal Apartment</option>
+                <option value="With parents">With Parents</option>
+                <option value="Co-op apartment">Co-op Apartment</option>
+                <option value="Office apartment">Office Apartment</option>
+            </select>
+            <br>
+            <label>Do you own your property?</label>
+            <input type="checkbox" class="form-control" formControlName="ownProperty">
+            <label>Do you own a vehicle?</label>
+            <input type="checkbox" class="form-control" formControlName="ownCar">
+        </fieldset>
+        <br>
+        <br>
+
+        <fieldset>
+            <legend>Miscellaneous</legend>
+            <label>Type of Education:</label>
+            <select class="form-control" formControlName="educationType">
                 <option value="Higher education">Higher Education</option>
                 <option value="Secondary / secondary special">Secondary/Special</option>
                 <option value="Incomplete higher">Incomplete Higher</option>
@@ -23,10 +93,12 @@
                 <option value="Academic degree">Academic Degree</option>
             </select>
             <br>
-            <label>Start Date of Current Job</label>
-            <input class="form-control" type="date" formControlName="daysEmployed">
-            </fieldset>
-            <br>
-            <button class="btn btn-primary" type="submit">Submit</button>
+            <label>Birth Date:</label>
+            <input class="form-control" type="date" formControlName="daysAlive">
+        </fieldset>
+        <br>
+        <br>
+
+        <button class="btn btn-primary" type="submit">Submit</button>
     </form>
 </div>
