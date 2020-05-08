@@ -1,0 +1,35 @@
+Column				Values								Description
+checking			'none','neg','<100','100+'			Checking balance
+term_months			Numerical							Term in months of loan applied for
+cred_hist			'None','Pd','current','>30','30+'	Credit History
+purpose				A40 : car (new)						Purpose for loan
+					A41 : car (used)
+					A42 : furniture/equipment
+					A43 : radio/television
+					A44 : domestic appliances
+					A45 : repairs
+					A46 : education
+					A48 : retraining
+					A49 : business
+					A410 : others
+amount				Numeric								Loan Purpose
+savings				'<50','50-250','250-500','>500'		Savings Balance
+employment_hist		'un','<1','1-4','4-7','7+'			Years Employed
+payment_to_disp		Numeric								Payment / Disposable Income
+gender				'M','F','NB','ND'					Gender
+marital_status		'Mar','Div/Sep','Sing'				Marital Status
+guarantors			Numeric								Number of co-applicants/guarantors
+residence			Numeric								Years in current residence
+property			'real','life','car/other','none'	Select first true option.
+age					Numeric								Years
+other_debt			'bank','stores','none'				Select first true option
+housing				'own','rent','free'					(free might mean living with parents)
+cred_this_bank		Numeric								Num cred accounts at this bank
+employment_curr		'unemp or unskilled(nonresident)'	Type of current employment
+					'unskilled(resident)'
+					'skilled/official'
+					'mgmt/self/highly qu/officer'
+household_size		Numeric								Others 18+ not on loan living in home
+phone				'yes','no'							Has one registered in own name
+foreign_worker		'yes','no'							Is a foreign worker
+guarantors          none, co-applicant, guarantor

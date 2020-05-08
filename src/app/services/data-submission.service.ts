@@ -17,7 +17,7 @@ export class DataSubmissionService {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
 
-  url = "http://localhost:8080/send-data";
+  url = "http://51.222.14.180:5000/";
 
   postData(data: FormGroup): Observable<boolean> {
     console.log("postData()");

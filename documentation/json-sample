@@ -1,0 +1,23 @@
+Endpoint - 51.222.14.180:5000
+{
+        "checking":"<100",
+        "term_months":10,
+        "cred_hist":"current",
+        "purpose":"A41",
+        "amount":5000.00,
+        "savings":"<50",
+        "employment_hist":"1-4",
+        "guarantors":"none",
+        "residence":8,
+        "property":"real",
+        "age":30,
+        "other_debt":"bank",
+        "housing":"rent",
+        "cred_this_bank":2,
+        "employment_curr":"unskilled(resident)",
+        "household_size":4,
+        "phone":"yes",
+        "foreign_worker":"no",
+        "gender":"M",
+        "marital_status":"Mar"
+}

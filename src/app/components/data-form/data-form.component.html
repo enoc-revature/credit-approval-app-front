@@ -1,100 +1,157 @@
 <div class="container">
     <form class="form-group mt-5" [formGroup]="dataForm" (ngSubmit)="onSubmit()">
         <fieldset>
-            <legend>Employment Info</legend>
-            <label>Gross Income:</label>
-            <input class="form-control" type="text" formControlName="grossIncome">
-            <br>
-            <label>Type of Income</label>
-            <select class="form-control"  formControlName="incomeType">
-                <option value="Working">Working</option>
-                <option value="Commercial associate">Commercial Associate</option>
-                <option value="Pensioner">Pensioner</option>
-                <option value="State servant">State Servant</option>
-                <option value="Student">Student</option>
+            <legend>Loan</legend>
+            <label>Purpose of Loan:</label>
+            <select class="form-control" formControlName="purpose">
+                <option value="A40">New Car</option>
+                <option value="A41">Used Car</option>
+                <option value="A42">Furniture/Equipment</option>
+                <option value="A43">Radio/Television</option>
+                <option value="A44">Domestic Appliances</option>
+                <option value="A45">Repairs</option>
+                <option value="A46">Education</option>
+                <option value="A48">Retraining</option>
+                <option value="A49">Business</option>
+                <option value="A410">Other</option>
             </select>
             <br>
-            <label>Type of Occupation</label>
-            <select class="form-control" formControlName="occupationType">
-                <option value="Security staff">Security Staff</option>
-                <option value="Sales staff">Sales Staff</option>
-                <option value="Accountants">Accountants</option>
-                <option value="Laborers">Laborers</option>
-                <option value="Managers">Managers</option>
-                <option value="Drivers">Drivers</option>
-                <option value="Core staff">Core Staff</option>
-                <option value="High skill tech staff">High Skill Tech Staff</option>
-                <option value="Cleaning staff">Cleaning Staff</option>
-                <option value="Private service staff">Private Service Staff</option>
-                <option value="Cooking staff">Cooking Staff</option>
-                <option value="Low-skill Laborers">Low-skill Laborers</option>
-                <option value="Medicine staff">Medicine Staff</option>
-                <option value="Secretaries">Secretaries</option>
-                <option value="Waiters/barmen staff">Waiters/barmen Staff</option>
-                <option value="HR staff">HR Staff</option>
-                <option value="Realty agents">Realty Agents</option>
-                <option value="IT staff">IT Staff</option>
-            </select>
+            <label>Amount of Loan:</label>
+            <input class="form-control" formControlName="amount">
             <br>
-            <label>Start Date of Current Job</label>
-            <input class="form-control" type="date" formControlName="daysEmployed">
+            <label>Loan Duration in Months:</label>
+            <input class="form-control" formControlName="term_months">
+            <br>
+            <label>Guarantor:</label>
+            <select class="form-control" formControlName="guarantors">
+                <option value="none">None</option>
+                <option value="co-applicant">Co-Applicant</option>
+                <option value="guarantor">Guarantor</option>
+            </select>
         </fieldset>
         <br>
         <br>
 
         <fieldset>
-            <legend>Family Info</legend>
-            <label>Family Status:</label>
-            <select class="form-control"  formControlName="familyStatus">
-                <option value="Civil marriage">Civil Marrage</option>
-                <option value="Married">Married</option>
-                <option value="Single / not married">Single / Not Married</option>
-                <option value="Separated">Separated</option>
-                <option value="Widow">Widow</option>
+            <legend>Employment</legend>
+            <label>Type of Employment</label>
+            <select class="form-control"  formControlName="employment_curr">
+                <option value="unemp or unskilled(nonresident)">Unemp or Unskilled(Nonresident)</option>
+                <option value="unskilled(resident)">Unskilled(Resident)</option>
+                <option value="skilled/official">Skilled/Official</option>
+                <option value="mgmt/self/highly qu/officer">Mgmt/Self/Highly Qu/Officer</option>
             </select>
             <br>
-            <label>Number of Children:</label>
-            <input class="form-control" type="text" formControlName="numChildren">
+            <label>Years Employed</label>
+            <select class="form-control"  formControlName="employment_hist">
+                <option value="un">Unemployed</option>
+                <option value="<1">Less than 1 Year</option>
+                <option value="1-4">1 to 4 Years</option>
+                <option value="4-7">4 to 7 Years</option>
+                <option value="7+">More than 7 Years</option>
+            </select>
+            <label>Foreign Worker:</label>
+            <input class="form-control" type="checkbox" formControlName="foreign_worker">
+        </fieldset>
+        <br>
+        <br>
+
+        <fieldset>
+            <legend>Financials/Debts</legend>
+            <label>Checking Amount:</label>
+            <select class="form-control"  formControlName="checking">
+                <option value="none">None</option>
+                <option value="neg">Negative Balance</option>
+                <option value="<100">Less than $100</option>
+                <option value="100+">More than $100</option>
+            </select>
+            <br>
+            <label>Savings Amount:</label>
+            <select class="form-control"  formControlName="savings">
+'<50','50-250','250-500','>500'
+                <option value="<50">Less than $50</option>
+                <option value="50-250">Between $50 and $250</option>
+                <option value="250-500">Between $250 and $500</option>
+                <option value=">500">More than $500</option>
+            </select>
+            <br>
+            <label>Lines of Credit with Current Bank:</label>
+            <input class="form-control" formControlName="cred_this_bank">
+            <br>
+            <label>Credit History:</label>
+            <select class="form-control"  formControlName="credit_hist">
+                <option value="None">No Credit History</option>
+                <option value="Pd">Pd</option>
+                <option value="current">Current</option>
+                <option value=">30">Less than 30 Months</option>
+                <option value="30+">More than 30 Months</option>
+            </select>
+            <br>
+            <label>Other Debt</label>
+            <select class="form-control"  formControlName="other_debt">
+                <option value="none">None</option>
+                <option value="bank">Bank</option>
+                <option value="stores">Stores</option>
+            </select>
+        </fieldset>
+        <br>
+        <br>
+
+
+        <fieldset>
+            <legend>Family</legend>
+            <label>Marital Status:</label>
+            <select class="form-control"  formControlName="marital_status">
+                <option value="Mar">Married</option>
+                <option value="Div/Sep">Divorced/Separated</option>
+                <option value="Sing">Single</option>
+            </select>
             <br>
             <label>Number of Individuls in Household:</label>
-            <input class="form-control" type="text" formControlName="familyMembers">
+            <input class="form-control" type="text" formControlName="household_size">
         </fieldset>
         <br>
         <br>
 
         <fieldset>
-            <legend>Property Info</legend>
-            <label>Type of Housing:</label>
-            <select class="form-control" formControlName="housingType">
-                <option value="Rented apartment">Rented Apartment</option>
-                <option value="House / apartment">House / Apartment</option>
-                <option value="Municipal apartment">Municipal Apartment</option>
-                <option value="With parents">With Parents</option>
-                <option value="Co-op apartment">Co-op Apartment</option>
-                <option value="Office apartment">Office Apartment</option>
+            <legend>Housing</legend>
+            <label>Other Property Owned (Select First True Option):</label>
+            <select class="form-control" formControlName="property">
+                <option value="real">Real Estate</option>
+                <option value="life">Life Insurance with Accumulated Value</option>
+                <option value="car/other">Car/Other</option>
+                <option value="none">None</option>
             </select>
             <br>
-            <label>Do you own your property?</label>
-            <input type="checkbox" class="form-control" formControlName="ownProperty">
-            <label>Do you own a vehicle?</label>
-            <input type="checkbox" class="form-control" formControlName="ownCar">
+            <label>Years in Current Housing:</label>
+            <input class="form-control" type="text" formControlName="residence">
+            <br>
+            <label>Housing:</label>
+            <select class="form-control"  formControlName="housing">
+                <option value="own">Own or Paying Mortgage</option>
+                <option value="rent">Renting</option>
+                <option value="free">Free</option>
+            </select>
         </fieldset>
         <br>
         <br>
 
         <fieldset>
             <legend>Miscellaneous</legend>
-            <label>Type of Education:</label>
-            <select class="form-control" formControlName="educationType">
-                <option value="Higher education">Higher Education</option>
-                <option value="Secondary / secondary special">Secondary/Special</option>
-                <option value="Incomplete higher">Incomplete Higher</option>
-                <option value="Lower secondary">Lower Secondary</option>
-                <option value="Academic degree">Academic Degree</option>
+            <label>Gender:</label>
+            <select class="form-control"  formControlName="gender">
+'M','F','NB','ND'
+                <option value="M">Male</option>
+                <option value="F">Female</option>
+                <option value="NB">Non-Binary</option>
+                <option value="ND">Not Disclosed</option>
             </select>
             <br>
-            <label>Birth Date:</label>
-            <input class="form-control" type="date" formControlName="daysAlive">
+            <label>Age:</label>
+            <input class="form-control" type="text" formControlName="age">
+            <br>
+            <label>Phone is registered under your name:</label>
+            <input type="checkbox" class="form-control" formControlName="phone">
         </fieldset>
         <br>
         <br>

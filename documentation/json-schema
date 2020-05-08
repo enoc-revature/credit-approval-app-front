@@ -1,0 +1,174 @@
+Returned by endpoint /schema
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "title": "The root schema",
+    "description": "The root schema comprises the entire JSON document.",
+    "default": {},
+    "required": [
+        "checking",
+        "term_months",
+        "cred_hist",
+        "purpose",
+        "amount",
+        "savings",
+        "employment_hist",
+        "guarantors",
+        "residence",
+        "property",
+        "age",
+        "other_debt",
+        "housing",
+        "cred_this_bank",
+        "employment_curr",
+        "household_size",
+        "phone",
+        "foreign_worker",
+        "gender",
+        "marital_status"
+    ],
+    "additionalProperties": true,
+    "properties": {
+        "checking": {
+            "$id": "#/properties/checking",
+            "type": "object",
+            "title": "The checking schema",
+            "description": "Checking Balance Category",
+            "default": {}
+        },
+        "term_months": {
+            "$id": "#/properties/term_months",
+            "type": "object",
+            "title": "The term_months schema",
+            "description": "Term of the loan in months",
+            "default": {}
+        },
+        "cred_hist": {
+            "$id": "#/properties/cred_hist",
+            "type": "object",
+            "title": "The cred_hist schema",
+            "description": "Credit History category.",
+            "default": {}
+        },
+        "purpose": {
+            "$id": "#/properties/purpose",
+            "type": "object",
+            "title": "The purpose schema",
+            "description": "Reason for the loan.",
+            "default": {}
+        },
+        "amount": {
+            "$id": "#/properties/amount",
+            "type": "object",
+            "title": "The amount schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": {}
+        },
+        "savings": {
+            "$id": "#/properties/savings",
+            "type": "object",
+            "title": "The savings schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": {}
+        },
+        "employment_hist": {
+            "$id": "#/properties/employment_hist",
+            "type": "object",
+            "title": "The employment_hist schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": {}
+        },
+        "guarantors": {
+            "$id": "#/properties/guarantors",
+            "type": "object",
+            "title": "The guarantors schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": {}
+        },
+        "residence": {
+            "$id": "#/properties/residence",
+            "type": "object",
+            "title": "The residence schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": {}
+        },
+        "property": {
+            "$id": "#/properties/property",
+            "type": "object",
+            "title": "The property schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": {}
+        },
+        "age": {
+            "$id": "#/properties/age",
+            "type": "object",
+            "title": "The age schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": {}
+        },
+        "other_debt": {
+            "$id": "#/properties/other_debt",
+            "type": "object",
+            "title": "The other_debt schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": {}
+        },
+        "housing": {
+            "$id": "#/properties/housing",
+            "type": "object",
+            "title": "The housing schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": {}
+        },
+        "cred_this_bank": {
+            "$id": "#/properties/cred_this_bank",
+            "type": "object",
+            "title": "The cred_this_bank schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": {}
+        },
+        "employment_curr": {
+            "$id": "#/properties/employment_curr",
+            "type": "object",
+            "title": "The employment_curr schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": {}
+        },
+        "household_size": {
+            "$id": "#/properties/household_size",
+            "type": "object",
+            "title": "The household_size schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": {}
+        },
+        "phone": {
+            "$id": "#/properties/phone",
+            "type": "object",
+            "title": "The phone schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": {}
+        },
+        "foreign_worker": {
+            "$id": "#/properties/foreign_worker",
+            "type": "object",
+            "title": "The foreign_worker schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": {}
+        },
+        "gender": {
+            "$id": "#/properties/gender",
+            "type": "object",
+            "title": "The gender schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": {}
+        },
+        "marital_status": {
+            "$id": "#/properties/marital_status",
+            "type": "object",
+            "title": "The marital_status schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": {}
+        }
+    }
+}
