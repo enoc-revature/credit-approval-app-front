@@ -1,4 +1,17 @@
 <div class="container">
+    <br>
+    <h1>Credit Loan Form</h1>
+    <p>
+        Please, enter all the fields in the form below.
+        Make sure your personal information is correct as it will be used to contact you if you are approved for a new line of credit.
+        <br>
+    </p>
+    <img src="https://images.pexels.com/photos/50987/money-card-business-credit-card-50987.jpeg?cs=srgb&dl=shopping-business-money-pay-50987.jpg&fm=jpg"
+         alt="Photo Not Available" class="rounded img-fluid" width="400">
+    <br>
+    <br>
+    <br>
+    <h5>ALL FIELDS ARE REQUIRED.</h5>
     <form class="form-group mt-5" [formGroup]="dataForm" (ngSubmit)="onSubmit()">
         <fieldset>
             <legend>Loan</legend>
@@ -153,6 +166,17 @@
         </fieldset>
         <br>
         <br>
+        <div *ngIf="showSuccess" class="alert alert-success">
+            <!-- One div with different class and innerHTML values -->
+            <strong>Success!</strong>
+            <br>
+            You will receive a confirmation email soon and another email in 3-5 business days with details or your new line of credit.
+        </div>
+        <div *ngIf="showDenied" class="alert alert-danger">
+            <strong>Denied</strong>
+            <br>
+            We're sorry, but you do not qualify for a line of credit.
+        </div>
 
         <button class="btn btn-primary" type="submit">Submit</button>
     </form>

@@ -1,3 +1,4 @@
+
 fieldset {
     padding: 1em;
     border: solid thin;
@@ -8,4 +9,19 @@ fieldset {
 legend {
     font-size: 1.5em;
     float: left;
+}
+
+img {
+    border: solid thin;
+    margin-left: 1em;
+}
+
+[type="checkbox"]
+{
+    width: 1.5em;
+    margin-left: 1em;
+}
+
+div.container {
+    max-width: 50em;
 }

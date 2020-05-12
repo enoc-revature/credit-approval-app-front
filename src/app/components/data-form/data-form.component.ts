@@ -17,7 +17,9 @@ export class DataFormComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  approved = false;
+  approved: JSON;
+  showSuccess = false;
+  showDenied = false;
 
   //TODO: add validation code to form
   dataForm = new FormGroup({
@@ -43,32 +45,31 @@ export class DataFormComponent implements OnInit {
     marital_status: new FormControl('')
   });
 
-  modifyFormGroup(form: FormGroup): FormGroup{
-    // String values
-    form.value.purpose = `{"0":"${form.value.purpose}"}`;
-    form.value.cred_hist = `{"0":"${form.value.cred_hist}"}`;
-    form.value.employment_hist = `{"0":"${form.value.employment_hist}"}`;
-    form.value.guarantors = `{"0":"${form.value.guarantors}"}`;
-    form.value.residence = `{"0":"${form.value.residence}"}`;
-    form.value.property = `{"0":"${form.value.property}"}`;
-    form.value.other_debt = `{"0":"${form.value.other_debt}"}`;
-    form.value.cred_this_bank = `{"0":"${form.value.cred_this_bank}"}`;
-    form.value.employment_curr = `{"0":"${form.value.employment_curr}"}`;
-    form.value.phone = `{"0":"${form.value.phone}"}`;
-    form.value.foreign_worker = `{"0":"${form.value.foreign_worker}"}`;
-    form.value.gender = `{"0":"${form.value.gender}"}`;
-    form.value.marital_status = `{"0":"${form.value.marital_status}"}`;
-    form.value.housing = `{"0":"${form.value.housing}"}`;
+  modifyFormGroup(form: FormGroup): string{
+    form.value.purpose = {"0":form.value.purpose};
+    form.value.cred_hist = {"0":form.value.cred_hist};
+    form.value.employment_hist = {"0":form.value.employment_hist};
+    form.value.guarantors = {"0":form.value.guarantors};
+    form.value.property = {"0":form.value.property};
+    form.value.other_debt = {"0":form.value.other_debt};
+    form.value.employment_curr = {"0":form.value.employment_curr};
+    form.value.phone = {"0":form.value.phone};
+    form.value.foreign_worker = {"0":form.value.foreign_worker};
+    form.value.gender = {"0":form.value.gender};
+    form.value.marital_status = {"0":form.value.marital_status};
+    form.value.housing = {"0":form.value.housing};
+    form.value.checking = {"0":form.value.checking};
+    form.value.savings = {"0":form.value.savings};
 
     // Numeric values
-    form.value.checking = `{"0":${form.value.checking}}`;
-    form.value.term_months = `{"0":${form.value.term_months}}`;
-    form.value.amount = `{"0":${form.value.amount}}`;
-    form.value.savings = `{"0":${form.value.savings}}`;
-    form.value.age = `{"0":${form.value.age}}`;
-    form.value.household_size = `{"0":${form.value.household_size}}`;
+    form.value.residence = {"0":parseInt(form.value.residence)};
+    form.value.term_months = {"0":parseInt(form.value.term_months)};
+    form.value.amount = {"0":parseInt(form.value.amount)};
+    form.value.age = {"0": parseInt(form.value.age)};
+    form.value.household_size = {"0":parseInt(form.value.household_size)};
+    form.value.cred_this_bank = {"0":parseInt(form.value.cred_this_bank)};
 
-    return form;
+    return JSON.stringify(form.value);
   }
 
   boolToString(b): string {
@@ -79,18 +80,30 @@ export class DataFormComponent implements OnInit {
   }
 
   onSubmit(): void {
+    let output: string;
     if (this.dataForm.valid) {
       console.log("Form Submitted!");
+
       console.log("Form Before:");
       console.log(this.dataForm.value);
-
       this.dataForm.value.phone = this.boolToString(this.dataForm.value.phone);
       this.dataForm.value.foreign_worker = this.boolToString(this.dataForm.value.foreign_worker);
-      this.dataForm = this.modifyFormGroup(this.dataForm);
+      output = this.modifyFormGroup(this.dataForm);
+
       console.log("Form After:");
       console.log(this.dataForm.value);
-      this.dss.postData(this.dataForm.value).subscribe(approved => {this.approved = approved;})
-      //this.dataForm.reset();
+
+      this.dss.postData(output).subscribe(approved => {
+        this.approved = approved;
+        console.log("Result:");
+        console.log(approved);
+        let result = approved["result"];
+        if(result === 1.0)
+          this.showSuccess = true;
+        else
+          this.showDenied = true;
+      })
+      this.dataForm.reset();
     }
   }
 }

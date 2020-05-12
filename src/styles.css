@@ -1,1 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+@import "../node_modules/bootswatch/dist/solar/bootstrap.min.css";
+/**
+ * Bootswatch Themes:
+ *      cerulean
+ *      cosmo
+ *      cyborg
+ *      darkly
+ *      flatly
+ *      journal
+ *      letera
+ *      lumen
+ *      lux
+ *      materia - very plain
+ *      minty
+ *      pulse
+ *      sandstone
+ *      sketchy
+ *      slate
+ *      solar
+ *      spacelab
+ *      superhero
+ *      united
+ *      yeti
+ */
