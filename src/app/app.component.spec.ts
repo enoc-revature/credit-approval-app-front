@@ -26,7 +26,8 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('credit-approval-app');
   });
 
-  it('should render title', () => {
+  // All contents including <title> tag have been removed.
+  xit('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
