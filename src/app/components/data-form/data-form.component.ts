@@ -95,7 +95,7 @@ export class DataFormComponent implements OnInit {
 
       this.dss.postData(output).subscribe(approved => {
         this.approved = approved;
-        console.log("Result:");
+        console.log("Result from postData().subscribe():");
         console.log(approved);
         let result = approved["result"];
         if(result === 1.0)
