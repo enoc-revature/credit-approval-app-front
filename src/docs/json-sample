@@ -21,3 +21,6 @@ Endpoint - 51.222.14.180:5000
         "gender":"M",
         "marital_status":"Mar"
 }
+
+Returned Value
+{"result": 1.0}
