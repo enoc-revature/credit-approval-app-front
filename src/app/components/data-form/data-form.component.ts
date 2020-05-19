@@ -23,6 +23,7 @@ export class DataFormComponent implements OnInit {
   showDenied = false;
 
   //TODO: add validation code to form
+  // formInput = {...formInputTemplate}; // Tried to change.
   formInput = formInputTemplate;
   // formInput = new FormGroup({
   //   checking: new FormControl(''),
@@ -74,12 +75,12 @@ export class DataFormComponent implements OnInit {
   //   return JSON.stringify(form.value);
   // }
 
-  boolToString(b): string {
-    if(b==true) //Not just truthy, but specifically true.
-      return "yes";
-    else
-      return "no";
-  }
+  // boolToString(b): string {
+  //   if(b==true) //Not just truthy, but specifically true.
+  //     return "yes";
+  //   else
+  //     return "no";
+  // }
 
   onSubmit(): void {
     let output: string;
