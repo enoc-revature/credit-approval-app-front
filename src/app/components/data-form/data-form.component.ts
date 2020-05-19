@@ -22,7 +22,7 @@ export class DataFormComponent implements OnInit {
   showDenied = false;
 
   //TODO: add validation code to form
-  dataForm = new FormGroup({
+  formInput = new FormGroup({
     checking: new FormControl(''),
     term_months: new FormControl(''),
     cred_hist: new FormControl(''),
@@ -81,17 +81,17 @@ export class DataFormComponent implements OnInit {
 
   onSubmit(): void {
     let output: string;
-    if (this.dataForm.valid) {
+    if (this.formInput.valid) {
       console.log("Form Submitted!");
 
       console.log("Form Before:");
-      console.log(this.dataForm.value);
-      this.dataForm.value.phone = this.boolToString(this.dataForm.value.phone);
-      this.dataForm.value.foreign_worker = this.boolToString(this.dataForm.value.foreign_worker);
-      output = this.modifyFormGroup(this.dataForm);
+      console.log(this.formInput.value);
+      this.formInput.value.phone = this.boolToString(this.formInput.value.phone);
+      this.formInput.value.foreign_worker = this.boolToString(this.formInput.value.foreign_worker);
+      output = this.modifyFormGroup(this.formInput);
 
       console.log("Form After:");
-      console.log(this.dataForm.value);
+      console.log(this.formInput.value);
 
       this.dss.postData(output).subscribe(approved => {
         this.approved = approved;
@@ -103,7 +103,7 @@ export class DataFormComponent implements OnInit {
         else
           this.showDenied = true;
       })
-      this.dataForm.reset();
+      this.formInput.reset();
     }
   }
 }

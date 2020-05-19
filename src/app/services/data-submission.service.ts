@@ -20,13 +20,12 @@ export class DataSubmissionService {
   // url = "http://51.222.14.180:5000/"; // Endpoint to the predictive model is no longer available.
 
   postData(data: string): Observable<JSON> {
-    console.log("postData()");
-    console.log(data);
+    // Actual Code.
     // return this.http.post<JSON>(this.url, data);
     // let resultJson = JSON.parse(JSON.stringify(RESULT_TRUE));
+
+    // Code to mock post request.
     let resultJson = JSON.parse(JSON.stringify(RESULT_FALSE));
-    console.log("Mocked Result:");
-    console.log(resultJson);
     return of(resultJson);
   }
 }
