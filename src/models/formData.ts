@@ -1,5 +1,5 @@
 import { FormGroup, FormControl } from '@angular/forms';
-export let formInput = new FormGroup({
+export let formInputTemplate = new FormGroup({
     checking: new FormControl(''),
     term_months: new FormControl(''),
     cred_hist: new FormControl(''),
