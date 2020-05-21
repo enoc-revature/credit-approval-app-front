@@ -16,7 +16,7 @@
         <fieldset>
             <legend>Loan</legend>
             <label>Purpose of Loan:</label>
-            <select class="form-control" formControlName="purpose">
+            <select id="purposeId" class="form-control" formControlName="purpose">
                 <option value="A40">New Car</option>
                 <option value="A41">Used Car</option>
                 <option value="A42">Furniture/Equipment</option>
@@ -30,13 +30,13 @@
             </select>
             <br>
             <label>Amount of Loan:</label>
-            <input class="form-control" formControlName="amount">
+            <input id="amountId" class="form-control" formControlName="amount">
             <br>
             <label>Loan Duration in Months:</label>
-            <input class="form-control" formControlName="term_months">
+            <input id="term_monthsId" class="form-control" formControlName="term_months">
             <br>
             <label>Guarantor:</label>
-            <select class="form-control" formControlName="guarantors">
+            <select id="guarantorsId" class="form-control" formControlName="guarantors">
                 <option value="none">None</option>
                 <option value="co-applicant">Co-Applicant</option>
                 <option value="guarantor">Guarantor</option>
@@ -48,7 +48,7 @@
         <fieldset>
             <legend>Employment</legend>
             <label>Type of Employment</label>
-            <select class="form-control"  formControlName="employment_curr">
+            <select id="employment_currId" class="form-control"  formControlName="employment_curr">
                 <option value="unemp or unskilled(nonresident)">Unemp or Unskilled(Nonresident)</option>
                 <option value="unskilled(resident)">Unskilled(Resident)</option>
                 <option value="skilled/official">Skilled/Official</option>
@@ -56,7 +56,7 @@
             </select>
             <br>
             <label>Years Employed</label>
-            <select class="form-control"  formControlName="employment_hist">
+            <select id="employment_histId" class="form-control"  formControlName="employment_hist">
                 <option value="un">Unemployed</option>
                 <option value="<1">Less than 1 Year</option>
                 <option value="1-4">1 to 4 Years</option>
@@ -64,7 +64,7 @@
                 <option value="7+">More than 7 Years</option>
             </select>
             <label>Foreign Worker:</label>
-            <input class="form-control" type="checkbox" formControlName="foreign_worker">
+            <input id="foreign_workerId" class="form-control" type="checkbox" formControlName="foreign_worker">
         </fieldset>
         <br>
         <br>
@@ -72,7 +72,7 @@
         <fieldset>
             <legend>Financials/Debts</legend>
             <label>Checking Amount:</label>
-            <select class="form-control"  formControlName="checking">
+            <select id="checkingId" class="form-control"  formControlName="checking">
                 <option value="none">None</option>
                 <option value="neg">Negative Balance</option>
                 <option value="<100">Less than $100</option>
@@ -80,7 +80,7 @@
             </select>
             <br>
             <label>Savings Amount:</label>
-            <select class="form-control"  formControlName="savings">
+            <select id="savingsId" class="form-control"  formControlName="savings">
                 <option value="<50">Less than $50</option>
                 <option value="50-250">Between $50 and $250</option>
                 <option value="250-500">Between $250 and $500</option>
@@ -88,10 +88,10 @@
             </select>
             <br>
             <label>Lines of Credit with Current Bank:</label>
-            <input class="form-control" formControlName="cred_this_bank">
+            <input id="cred_this_bankId" class="form-control" formControlName="cred_this_bank">
             <br>
             <label>Credit History (in Months):</label>
-            <select class="form-control"  formControlName="cred_hist">
+            <select id="cred_histId" class="form-control"  formControlName="cred_hist">
                 <option value="None">No Credit History</option>
                 <option value="Pd">Late/Delinquent</option>
                 <option value="current">Current</option>
@@ -100,7 +100,7 @@
             </select>
             <br>
             <label>Other Debt</label>
-            <select class="form-control"  formControlName="other_debt">
+            <select id="other_debtId" class="form-control"  formControlName="other_debt">
                 <option value="none">None</option>
                 <option value="bank">Bank</option>
                 <option value="stores">Stores</option>
@@ -113,14 +113,14 @@
         <fieldset>
             <legend>Family</legend>
             <label>Marital Status:</label>
-            <select class="form-control"  formControlName="marital_status">
+            <select id="marital_statusId" class="form-control"  formControlName="marital_status">
                 <option value="Mar">Married</option>
                 <option value="Div/Sep">Divorced/Separated</option>
                 <option value="Sing">Single</option>
             </select>
             <br>
             <label>Number of Individuls in Household:</label>
-            <input class="form-control" type="text" formControlName="household_size">
+            <input id="household_sizeId" class="form-control" type="text" formControlName="household_size">
         </fieldset>
         <br>
         <br>
@@ -128,7 +128,7 @@
         <fieldset>
             <legend>Housing</legend>
             <label>Other Property Owned (Select First True Option):</label>
-            <select class="form-control" formControlName="property">
+            <select id="propertyId" class="form-control" formControlName="property">
                 <option value="real">Real Estate</option>
                 <option value="life">Life Insurance with Accumulated Value</option>
                 <option value="car/other">Car/Other</option>
@@ -136,7 +136,7 @@
             </select>
             <br>
             <label>Years in Current Housing:</label>
-            <input class="form-control" type="text" formControlName="residence">
+            <input id="residenceId" class="form-control" type="text" formControlName="residence">
             <br>
             <label>Housing:</label>
             <select class="form-control"  formControlName="housing">
@@ -151,7 +151,7 @@
         <fieldset>
             <legend>Miscellaneous</legend>
             <label>Gender:</label>
-            <select class="form-control"  formControlName="gender">
+            <select id="genderId" class="form-control"  formControlName="gender">
                 <option value="M">Male</option>
                 <option value="F">Female</option>
                 <option value="NB">Non-Binary</option>
@@ -159,15 +159,14 @@
             </select>
             <br>
             <label>Age:</label>
-            <input class="form-control" type="text" formControlName="age">
+            <input id="ageId" class="form-control" type="text" formControlName="age">
             <br>
             <label>Phone is registered under your name:</label>
-            <input type="checkbox" class="form-control" formControlName="phone">
+            <input id="phoneId" type="checkbox" class="form-control" formControlName="phone">
         </fieldset>
         <br>
         <br>
         <div *ngIf="showSuccess" class="alert alert-success">
-            <!-- One div with different class and innerHTML values -->
             <strong>Success!</strong>
             <br>
             You will receive a confirmation email soon and another email in 3-5 business days with details or your new line of credit.
