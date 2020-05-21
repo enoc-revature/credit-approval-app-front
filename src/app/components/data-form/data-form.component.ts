@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { DataSubmissionService } from 'src/app/services/data-submission.service';
-import { formInputTemplate } from 'src/models/formData';
+import { formInputTemplate } from 'src/models/formData1';
 
 @Component({
   selector: 'app-data-form',

@@ -13,7 +13,7 @@ export class DataSubmissionService {
     private http: HttpClient
   )
   { }
-
+  
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
@@ -55,26 +55,35 @@ export class DataSubmissionService {
    * bootToString is used to make the form readable to the predictive back-end.
    * @param b 
    */
-  boolToString(b): string {
-    if(b==true) //Not just truthy, but specifically true.
+  boolToString(b: boolean): string {
+    if(b===true) //Not just truthy, but specifically true.
       return "yes";
     else
       return "no";
   }
 
+  /**
+   * 
+   * @param formInput 
+   */
   makeFormMachineReadable(formInput: FormGroup): string{
       formInput.value.phone = this.boolToString(formInput.value.phone);
       formInput.value.foreign_worker = this.boolToString(formInput.value.foreign_worker);
       return this.modifyFormGroup(formInput);
 
   }
+
+  /**
+   * 
+   * @param data 
+   */
   postData(data: FormGroup): Observable<JSON> {
       let machineData: string = this.makeFormMachineReadable(data);
     // Actual Code.
     // return this.http.post<JSON>(this.url, data);
-    // let resultJson = JSON.parse(JSON.stringify(RESULT_TRUE));
 
     // Code to mock post request.
+    // let resultJson = JSON.parse(JSON.stringify(RESULT_TRUE));
     let resultJson = JSON.parse(JSON.stringify(RESULT_FALSE));
     return of(resultJson);
   }

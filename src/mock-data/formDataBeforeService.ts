@@ -1,7 +1,10 @@
 import { FormGroup, FormControl } from '@angular/forms';
-import { formInputTemplate } from 'src/models/formData';
+import { formInputTemplate } from 'src/models/formData1';
+export { FORM_DATA_B1,FORM_DATA_B2 };
 
-let tempForm = {...formInputTemplate};
+let tempForm = formInputTemplate;
+// let tmp = {...formInputTemplate};
+// let tempForm = {...tmp};
 /**
  * Valid Data
  */
@@ -82,7 +85,7 @@ let phone = [false,true];
  *  FORM_DATA_1
  */
 // String Values
-tempForm.value.purpose = phone[0];
+tempForm.value.purpose = purpose[0];
 tempForm.value.cred_hist = cred_hist[0];
 tempForm.value.employment_hist = employment_hist[0];
 tempForm.value.guarantors = guarantors[0];
@@ -107,10 +110,36 @@ tempForm.value.cred_this_bank = cred_this_bank;
 tempForm.value.foreign_worker = foreign_worker[0];
 tempForm.value.phone = phone[0];
 
-export const FORM_DATA_1 = tempForm;
+const FORM_DATA_B1 = tempForm;
 
 
 
 /**
  * FORM_DATA_2
  */
+tempForm.value.purpose = purpose[0];
+tempForm.value.cred_hist = cred_hist[0];
+tempForm.value.employment_hist = employment_hist[0];
+tempForm.value.guarantors = guarantors[0];
+tempForm.value.property = property[0];
+tempForm.value.other_debt = other_debt[0];
+tempForm.value.employment_curr = employment_curr[0];
+tempForm.value.gender = gender[0];
+tempForm.value.marital_status = marital_status[0];
+tempForm.value.housing = housing[0];
+tempForm.value.checking = checking[0];
+tempForm.value.savings = savings[0];
+
+// Numeric values
+tempForm.value.residence = residence;
+tempForm.value.term_months = term_months;
+tempForm.value.amount = amount;
+tempForm.value.age = age;
+tempForm.value.household_size = household_size;
+tempForm.value.cred_this_bank = cred_this_bank;
+
+// Boolean values
+tempForm.value.foreign_worker = foreign_worker[1];
+tempForm.value.phone = phone[0];
+
+const FORM_DATA_B2 = tempForm;
