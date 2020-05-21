@@ -8,6 +8,7 @@ import { FORM_DATA_A1,FORM_DATA_A2 } from 'src/mock-data/formDataAfterService';
 
 describe('DataSubmissionService', () => {
   let service: DataSubmissionService;
+  let httpMock: HttpTestingController;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -16,6 +17,15 @@ describe('DataSubmissionService', () => {
       providers: [ DataSubmissionService ]
     });
     service = TestBed.inject(DataSubmissionService);
+    httpMock = TestBed.inject(HttpTestingController);
+  });
+
+  // afterEach(inject([HttpTestingController], (httpMock: HttpTestingController) => {
+  //   httpMock.verify();
+  // }));
+
+  afterEach( () => {
+    httpMock.verify();
   });
 
   it('should be created', () => {
@@ -31,21 +41,34 @@ describe('DataSubmissionService', () => {
     expect(service.modifyFormGroup(FORM_DATA_B1)).toBe(JSON.stringify(FORM_DATA_A1.value));
   });
 
-  fit('test makeFormMachineReadable(FormGroup): string', () => {
-    console.log(JSON.stringify(FORM_DATA_A2.value));
+  it('test makeFormMachineReadable(FormGroup): string', () => {
     expect(service.makeFormMachineReadable(FORM_DATA_B2)).toBe(JSON.stringify(FORM_DATA_A2.value));
-  }
-
+    }
   );
 
-  it('test post request', 
+  // Doesn't quite work.  expect is true when it obviously isn't.
+  fit('test post request',
+    () => {
     // When mocking http requests, all the testing occurs in the inject() function.
-    inject( [HttpClientTestingModule, DataSubmissionService],
-            (httpMock: HttpTestingController, service: DataSubmissionService) => {
-              service.postData(FORM_DATA_B1).subscribe( data => {
+    // inject( [HttpClientTestingModule, DataSubmissionService],
+    //         (httpMock: HttpTestingController, service: DataSubmissionService) => {
+              let data: JSON;
+    //           console.log("data: " + JSON.stringify(data));
 
+              // Usual call to test a method.
+              service.postData(FORM_DATA_B1).subscribe( data => {
+                this.data = data;
+                // expect(JSON.stringify(data)).toBe(JSON.stringify(RESULT_FALSE));
+                expect(JSON.stringify(data)).toBe("Incorrect Expect"); // ???
               });
+
+              // Actually mock the http request.
+              let req = httpMock.expectOne("http://51.222.14.180:5000/");
+              expect(req.request.method).toEqual("POST");
+
+              // Send the mocked data to the service method.
+              req.flush({data});
             }
-    )
+  //   )
   );
 });
