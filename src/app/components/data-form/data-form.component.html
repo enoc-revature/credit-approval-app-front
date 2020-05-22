@@ -12,7 +12,7 @@
     <br>
     <br>
     <h5>ALL FIELDS ARE REQUIRED.</h5>
-    <form class="form-group mt-5" [formGroup]="formInput" (ngSubmit)="onSubmit()">
+    <form id="formId" class="form-group mt-5" [formGroup]="formInput" (ngSubmit)="onSubmit()">
         <fieldset>
             <legend>Loan</legend>
             <label>Purpose of Loan:</label>
@@ -177,6 +177,6 @@
             We're sorry, but you do not qualify for a line of credit.
         </div>
 
-        <button class="btn btn-primary" type="submit">Submit</button>
+        <button id="submitId" class="btn btn-primary" type="submit">Submit</button>
     </form>
 </div>

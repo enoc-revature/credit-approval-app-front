@@ -3,10 +3,10 @@ import { HttpClientTestingModule, HttpTestingController } from '@angular/common/
 
 import { DataFormComponent } from './data-form.component';
 import { DataSubmissionService } from 'src/app/services/data-submission.service';
-import { RESULT_TRUE,RESULT_FALSE } from 'src/mock-data/results';
-import { FORM_DATA_B1,FORM_DATA_B2 } from 'src/mock-data/formDataBeforeService';
-import { FORM_DATA_A1,FORM_DATA_A2 } from 'src/mock-data/formDataAfterService';
-import { element, by, $ } from 'protractor';
+import { RESULT_TRUE, RESULT_FALSE } from 'src/mock-data/results';
+import { FORM_DATA_B1, FORM_DATA_B2 } from 'src/mock-data/formDataBeforeService';
+import { FORM_DATA_A1, FORM_DATA_A2 } from 'src/mock-data/formDataAfterService';
+import { element, by } from 'protractor';
 
 describe('DataFormComponent', () => {
   let component: DataFormComponent;

@@ -1,12 +1,18 @@
 
 import { AppPage } from './app.po';
 import { browser, logging, element, by } from 'protractor';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 
 import { RESULT_TRUE,RESULT_FALSE } from 'src/mock-data/results';
 import { FORM_DATA_B1,FORM_DATA_B2 } from 'src/mock-data/formDataBeforeService';
+import { DataFormComponent } from 'src/app/components/data-form/data-form.component';
+
 
 describe('data-form e2e', () => {
   let page: AppPage;
+  let component: DataFormComponent;
+  let fixture: ComponentFixture<DataFormComponent>;
 
   // Not useful because browser is not synced with angular app.
   // beforeEach(() => {
@@ -16,6 +22,22 @@ describe('data-form e2e', () => {
   // Need to wait for page to finish loading.
   beforeEach(async function(){
     await browser.get('http://localhost:4200/');
+    fixture = TestBed.createComponent(DataFormComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      declarations: [ DataFormComponent ],
+      imports: [ HttpClientTestingModule ],
+      providers: [ ]
+    })
+    .compileComponents();
+  }));
+
+  beforeEach(() => {
   });
 
   it('should display h1 header', () => {
@@ -27,7 +49,7 @@ describe('data-form e2e', () => {
   });
 
   fit('Test entire form', () => {
-    // String
+    // String/Dropdown
     element(by.id('purposeId')).$('[value="A40"]').click();
     element(by.id('cred_histId')).$('[value="None"]').click();
     element(by.id('employment_histId')).$('[value="un"]').click();
@@ -41,7 +63,7 @@ describe('data-form e2e', () => {
     element(by.id('checkingId')).$('[value="none"]').click();
     element(by.id('savingsId')).$('[value="<50"]').click();
       
-    // // Numeric
+    // Numeric/Input
     element(by.id('residenceId')).sendKeys('10');
     element(by.id('term_monthsId')).sendKeys('10');
     element(by.id('amountId')).sendKeys('100.00');
@@ -49,9 +71,16 @@ describe('data-form e2e', () => {
     element(by.id('household_sizeId')).sendKeys('1');
     element(by.id('cred_this_bankId')).sendKeys('1');
       
-    // // Boolean
+    // Boolean/Checkbox
     element(by.id('foreign_workerId')).click();
     element(by.id('phoneId')).click();
+
+    // Submit form
+    element(by.id('submitId')).click();
+
+    // Wait 3 seconds and then check
+    browser.sleep(3*1000);
+    expect(component.approved).toEqual(RESULT_FALSE);
 
   })
 
