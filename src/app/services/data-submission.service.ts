@@ -80,11 +80,11 @@ export class DataSubmissionService {
   postData(data: FormGroup): Observable<JSON> {
       let machineData: string = this.makeFormMachineReadable(data);
     // Actual Code.
-    return this.http.post<JSON>(this.url, data);
+    // return this.http.post<JSON>(this.url, data);
 
     // Code to mock post request.
     // let resultJson = JSON.parse(JSON.stringify(RESULT_TRUE));
-    // let resultJson = JSON.parse(JSON.stringify(RESULT_FALSE));
-    // return of(resultJson);
+    let resultJson = JSON.parse(JSON.stringify(RESULT_FALSE));
+    return of(resultJson);
   }
 }

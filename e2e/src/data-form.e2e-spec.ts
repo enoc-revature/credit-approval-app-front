@@ -3,17 +3,24 @@ import { AppPage } from './app.po';
 import { browser, logging, element, by } from 'protractor';
 // Xpath = tagName[@attribute=attrubute_value]
 
-describe('workspace-project App', () => {
+describe('data-form e2e', () => {
   let page: AppPage;
 
-  beforeEach(() => {
-    page = new AppPage();
+//   beforeEach(() => {
+//     page = new AppPage();
+//   });
+
+  beforeEach(async function(){
+      // Need to wait for page to finish loading.
+      await browser.get('http://localhost:4200/');
+  
   });
 
   it('should display h1 header', () => {
     // page.navigateTo();
-    let elem = element(by.xpath('/html/body/h1'));
-    let text = elem.getText;
+
+    let elem = element(by.id("data-form-headerId"));
+    let text = elem.getText();
     expect(text).toBe("Credit Loan Form");
   });
 
