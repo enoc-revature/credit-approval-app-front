@@ -82,6 +82,15 @@ export class DataFormComponent implements OnInit {
   //     return "no";
   // }
 
+  popupOfResult(approved: JSON): void {
+        let result = approved["result"];
+        if(result === 1.0)
+          this.showSuccess = true;
+        else
+          this.showDenied = true;
+
+  }
+
   onSubmit(): void {
     let output: string;
     if (this.formInput.valid) {
@@ -98,14 +107,15 @@ export class DataFormComponent implements OnInit {
 
       // this.dss.postData(output).subscribe(approved => {
       this.dss.postData(this.formInput).subscribe(approved => {
-        this.approved = approved;
+        // this.approved = approved;
         // console.log("Result from postData().subscribe():");
         // console.log(approved);
-        let result = approved["result"];
-        if(result === 1.0)
-          this.showSuccess = true;
-        else
-          this.showDenied = true;
+        // let result = approved["result"];
+        // if(result === 1.0)
+        //   this.showSuccess = true;
+        // else
+        //   this.showDenied = true;
+        this.popupOfResult(approved);
       })
       this.formInput.reset();
     }
