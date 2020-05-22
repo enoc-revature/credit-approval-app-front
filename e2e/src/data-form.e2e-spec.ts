@@ -1,28 +1,59 @@
 
 import { AppPage } from './app.po';
 import { browser, logging, element, by } from 'protractor';
-// Xpath = tagName[@attribute=attrubute_value]
+
+import { RESULT_TRUE,RESULT_FALSE } from 'src/mock-data/results';
+import { FORM_DATA_B1,FORM_DATA_B2 } from 'src/mock-data/formDataBeforeService';
 
 describe('data-form e2e', () => {
   let page: AppPage;
 
-//   beforeEach(() => {
-//     page = new AppPage();
-//   });
+  // Not useful because browser is not synced with angular app.
+  // beforeEach(() => {
+  //   page = new AppPage();
+  // });
 
+  // Need to wait for page to finish loading.
   beforeEach(async function(){
-      // Need to wait for page to finish loading.
-      await browser.get('http://localhost:4200/');
-  
+    await browser.get('http://localhost:4200/');
   });
 
   it('should display h1 header', () => {
-    // page.navigateTo();
+    // page.navigateTo(); // Was used with beforeEach that does not sync.
 
     let elem = element(by.id("data-form-headerId"));
     let text = elem.getText();
     expect(text).toBe("Credit Loan Form");
   });
+
+  fit('Test entire form', () => {
+    // String
+    element(by.id('purposeId')).$('[value="A40"]').click();
+    element(by.id('cred_histId')).$('[value="None"]').click();
+    element(by.id('employment_histId')).$('[value="un"]').click();
+    element(by.id('guarantorsId')).$('[value="none"]').click();
+    element(by.id('propertyId')).$('[value="real"]').click();
+    element(by.id('other_debtId')).$('[value="none"]').click();
+    element(by.id('employment_currId')).$('[value="unemp or unskilled(nonresident)"]').click();
+    element(by.id('genderId')).$('[value="M"]').click();
+    element(by.id('marital_statusId')).$('[value="Mar"]').click();
+    element(by.id('housingId')).$('[value="own"]').click();
+    element(by.id('checkingId')).$('[value="none"]').click();
+    element(by.id('savingsId')).$('[value="<50"]').click();
+      
+    // // Numeric
+    element(by.id('residenceId')).sendKeys('10');
+    element(by.id('term_monthsId')).sendKeys('10');
+    element(by.id('amountId')).sendKeys('100.00');
+    element(by.id('ageId')).sendKeys('18');
+    element(by.id('household_sizeId')).sendKeys('1');
+    element(by.id('cred_this_bankId')).sendKeys('1');
+      
+    // // Boolean
+    element(by.id('foreign_workerId')).click();
+    element(by.id('phoneId')).click();
+
+  })
 
   afterEach(async () => {
     // Assert that there are no errors emitted from the browser
@@ -32,31 +63,3 @@ describe('data-form e2e', () => {
     } as logging.Entry));
   });
 });
-
-    // String
-    // let elem = document.getElementById("#purposeId");
-    // console.log(elem.);
-    // document.getElementById("#purposeId").innerText = FORM_DATA_B1.value.purpose;
-    // document.getElementById("#cred_histId").innerHTML = FORM_DATA_B1.value.cred_hist;
-    // document.getElementById("#employment_histId").innerHTML = FORM_DATA_B1.value.employment_hist;
-    // document.getElementById("#guarantorsId").innerHTML = FORM_DATA_B1.value.guarantors;
-    // document.getElementById("#propertyId").innerHTML = FORM_DATA_B1.value.property;
-    // document.getElementById("#other_debtId").innerHTML = FORM_DATA_B1.value.other_debt;
-    // document.getElementById("#employment_currId").innerHTML = FORM_DATA_B1.value.employment_curr;
-    // document.getElementById("#genderId").innerHTML = FORM_DATA_B1.value.gender;
-    // document.getElementById("#marital_statusId").innerHTML = FORM_DATA_B1.value.marital_status;
-    // document.getElementById("#housingId").innerHTML = FORM_DATA_B1.value.housing;
-    // document.getElementById("#checkingId").innerHTML = FORM_DATA_B1.value.checking;
-    // document.getElementById("#savingsId").innerHTML = FORM_DATA_B1.value.savings;
-      
-    // // Numeric
-    // document.getElementById("#residenceId").innerHTML = FORM_DATA_B1.value.residence;
-    // document.getElementById("#term_monthsId").innerHTML = FORM_DATA_B1.value.term_months;
-    // document.getElementById("#amountId").innerHTML = FORM_DATA_B1.value.amount;
-    // document.getElementById("#ageId").innerHTML = FORM_DATA_B1.value.age;
-    // document.getElementById("#household_sizeId").innerHTML = FORM_DATA_B1.value.household_size;
-    // document.getElementById("#cred_this_bankId").innerHTML = FORM_DATA_B1.value.cred_this_bank;
-      
-    // // Boolean
-    // document.getElementById("#foreign_workerId").innerHTML = FORM_DATA_B1.value.foreign_worker;
-    // document.getElementById("#phoneId").innerHTML = FORM_DATA_B1.value.phone;
