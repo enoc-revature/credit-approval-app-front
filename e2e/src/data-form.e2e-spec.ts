@@ -1,6 +1,7 @@
 
 import { AppPage } from './app.po';
-import { browser, logging } from 'protractor';
+import { browser, logging, element, by } from 'protractor';
+// Xpath = tagName[@attribute=attrubute_value]
 
 describe('workspace-project App', () => {
   let page: AppPage;
@@ -9,10 +10,11 @@ describe('workspace-project App', () => {
     page = new AppPage();
   });
 
-  it('should display welcome message', () => {
-    page.navigateTo();
-
-    expect(page.getTitleText()).toEqual('credit-approval-app app is running!');
+  it('should display h1 header', () => {
+    // page.navigateTo();
+    let elem = element(by.xpath('/html/body/h1'));
+    let text = elem.getText;
+    expect(text).toBe("Credit Loan Form");
   });
 
   afterEach(async () => {
