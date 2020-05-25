@@ -1,6 +1,6 @@
 <div class="container">
     <br>
-    <h1>Credit Loan Form</h1>
+    <h1 id="data-form-headerId">Credit Loan Form</h1>
     <p>
         Please, enter all the fields in the form below.
         Make sure your personal information is correct as it will be used to contact you if you are approved for a new line of credit.
@@ -12,7 +12,7 @@
     <br>
     <br>
     <h5>ALL FIELDS ARE REQUIRED.</h5>
-    <form class="form-group mt-5" [formGroup]="formInput" (ngSubmit)="onSubmit()">
+    <form id="formId" class="form-group mt-5" [formGroup]="formInput" (ngSubmit)="onSubmit()">
         <fieldset>
             <legend>Loan</legend>
             <label>Purpose of Loan:</label>
@@ -139,7 +139,7 @@
             <input id="residenceId" class="form-control" type="text" formControlName="residence">
             <br>
             <label>Housing:</label>
-            <select class="form-control"  formControlName="housing">
+            <select id="housingId" class="form-control"  formControlName="housing">
                 <option value="own">Own or Paying Mortgage</option>
                 <option value="rent">Renting</option>
                 <option value="free">Free</option>
@@ -177,6 +177,6 @@
             We're sorry, but you do not qualify for a line of credit.
         </div>
 
-        <button class="btn btn-primary" type="submit">Submit</button>
+        <button id="submitId" class="btn btn-primary" type="submit">Submit</button>
     </form>
 </div>
